@@ -1,75 +1,189 @@
 <!DOCTYPE html>
+
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ihsan Ataul Musawir | Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ihsan AtauL Musawir | 3D Modeller</title>
+
+<style>
+:root{
+--main:#7c3aed;
+--bg:#0b1120;
+--card:#111827;
+--text:#e5e7eb;
+--accent:#22c55e;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial}
+body{background:var(--bg);color:var(--text);scroll-behavior:smooth}
+
+/* NAV */
+nav{
+position:fixed;width:100%;top:0;
+background:#020617cc;
+backdrop-filter:blur(10px);
+padding:15px 40px;
+display:flex;justify-content:space-between;align-items:center;
+z-index:1000
+}
+nav a{color:white;text-decoration:none;margin-left:25px;opacity:.8}
+nav a:hover{opacity:1}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;flex-direction:column;justify-content:center;align-items:center;
+text-align:center;
+background:radial-gradient(circle at center,#7c3aed55,#000);
+padding:20px
+}
+.hero h1{font-size:52px}
+.hero span{color:var(--main)}
+.hero p{margin-top:10px;opacity:.8}
+.btn{
+margin-top:25px;
+background:var(--main);
+padding:14px 28px;
+border-radius:12px;
+text-decoration:none;color:white;
+display:inline-block
+}
+
+/* SECTION */
+section{padding:100px 20px;max-width:1100px;margin:auto}
+h2{text-align:center;margin-bottom:50px;font-size:34px}
+
+/* ABOUT */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.about img{width:100%;border-radius:20px}
+
+/* SKILLS */
+.skill{margin-bottom:18px}
+.bar{background:#1f2937;border-radius:10px;overflow:hidden}
+.bar div{height:10px;background:var(--main)}
+
+/* SOFTWARE */
+.tools{display:flex;flex-wrap:wrap;gap:15px;justify-content:center}
+.tool{background:var(--card);padding:12px 18px;border-radius:12px}
+
+/* PORTFOLIO */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px
+}
+.card{
+background:var(--card);
+border-radius:18px;
+overflow:hidden;
+transition:.25s
+}
+.card:hover{transform:translateY(-8px)}
+.card img{width:100%}
+.card div{padding:15px}
+
+/* SERVICES */
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
+.service{background:var(--card);padding:25px;border-radius:18px;text-align:center}
+.price{color:var(--accent);margin-top:10px;font-weight:bold}
+
+/* TESTI */
+.testi{background:var(--card);padding:20px;border-radius:15px;margin-bottom:20px}
+
+/* CONTACT */
+form{display:grid;gap:15px;max-width:500px;margin:auto}
+input,textarea{
+padding:12px;border-radius:10px;border:none;background:#1f2937;color:white
+}
+button{background:var(--main);border:none;padding:14px;border-radius:10px;color:white;cursor:pointer}
+
+/* FOOTER */
+footer{text-align:center;padding:30px;background:#020617;margin-top:50px}
+
+@media(max-width:800px){
+.about{grid-template-columns:1fr}
+.hero h1{font-size:38px}
+}
+</style>
+
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
 
-    <nav class="p-6 bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-5xl mx-auto flex justify-between items-center">
-            <h1 class="text-xl font-bold tracking-tighter">Ihsan<span class="text-blue-600">Ataul Musawir</span></h1>
-            <div class="space-x-6">
-                <a href="#projects" class="hover:text-blue-600 transition">Proyek</a>
-                <a href="#about" class="hover:text-blue-600 transition">Tentang</a>
-                <a href="mailto:emailmu@gmail.com" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Kontak</a>
-            </div>
-        </div>
-    </nav>
+<body>
 
-    <header class="py-20 px-6">
-        <div class="max-w-5xl mx-auto text-center">
-            <img src="https://via.placeholder.com/150" alt="Foto Profil" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white shadow-lg">
-            <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Halo, Saya [Ihsan Ataul Musawir] 👋</h2>
-            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                Seorang **3D Modeller** yang hobi membuat senjata apapun.
-            </p>
-            <div class="flex justify-center gap-4">
-                <a href="#" class="text-2xl text-gray-700 hover:text-blue-600"><i class="fab fa-github"></i></a>
-                <a href="#" class="text-2xl text-gray-700 hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </div>
-    </header>
+<nav>
+<b>IHSAN</b>
+<div>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
 
-    <section id="projects" class="py-16 bg-white px-6">
-        <div class="max-w-5xl mx-auto">
-            <h3 class="text-2xl font-bold mb-10 text-center">Proyek Terbaru</h3>
-            <div class="grid md:grid-cols-2 gap-8">
-                
-                <div class="border rounded-xl overflow-hidden hover:shadow-xl transition shadow-sm">
-                    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,fit=crop/jK2tEj5rEfo5TPCp/black-holder-iTTrHYiFeg83zGHZ.jpg" alt="Project 1" class="w-full">
-                    <div class="p-6">
-                        <h4 class="font-bold text-xl mb-2">E-Commerce App</h4>
-                        <p class="text-gray-600 mb-4">Aplikasi belanja online menggunakan React dan Firebase.</p>
-                        <div class="flex gap-2">
-                            <span class="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">React</span>
-                            <span class="text-xs bg-green-100 text-green-600 px-2 py-1 rounded">Tailwind</span>
-                        </div>
-                    </div>
-                </div>
+<div class="hero">
+<h1>Ihsan <span>AtauL Musawir</span></h1>
+<p>Professional 3D Modeller • Game Assets • Character</p>
+<a class="btn" href="#portfolio">Lihat Karya</a>
+</div>
 
-                <div class="border rounded-xl overflow-hidden hover:shadow-xl transition shadow-sm">
-                    <img src="https://via.placeholder.com/600x400" alt="Project 2" class="w-full">
-                    <div class="p-6">
-                        <h4 class="font-bold text-xl mb-2">Portfolio Website</h4>
-                        <p class="text-gray-600 mb-4">Website portofolio pribadi yang responsif dan cepat.</p>
-                        <div class="flex gap-2">
-                            <span class="text-xs bg-orange-100 text-orange-600 px-2 py-1 rounded">HTML</span>
-                            <span class="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">CSS</span>
-                        </div>
-                    </div>
-                </div>
+<section id="about">
+<h2>Tentang Saya</h2>
+<div class="about">
+<img src="https://via.placeholder.com/500x500">
+<p>
+Saya adalah 3D modeller yang berfokus pada pembuatan asset game,
+character modeling.  
+Berpengalaman membuat model lowpoly hingga highpoly untuk kebutuhan
+game, animasi, maupun komersial.
+</p>
+</div>
+</section>
 
-            </div>
-        </div>
-    </section>
+<section id="skills">
+<h2>Skills</h2>
 
-    <footer class="py-10 text-center text-gray-500 border-t">
-        <p>&copy; 2026 [Ihsan Ataul Musawir]. Dibuat dengan GitHub Pages.</p>
-    </footer>
+<div class="skill">Modeling<div class="bar"><div style="width:95%"></div></div></div>
+<div class="skill">Texturing<div class="bar"><div style="width:90%"></div></div></div>
+<div class="skill">Rendering<div class="bar"><div style="width:88%"></div></div></div>
+
+<h2 style="margin-top:60px">Software</h2>
+<div class="tools">
+<div class="tool">Blender</div>
+</div>
+</section>
+
+<section id="portfolio">
+<h2>Portfolio</h2>
+<div class="grid">
+
+<div class="card"><img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,fit=crop/jK2tEj5rEfo5TPCp/black-holder-iTTrHYiFeg83zGHZ.jpg"><div>Black Holder Schyte</div></div>
+<div class="card"><img src="https://assets.zyrosite.com/jK2tEj5rEfo5TPCp/kursigeming-ihsan-J2J9cqp851o9zM5M.png"><div>Kursi Gaming Bantal Iuno</div></div>
+<div class="card"><img src="https://assets.zyrosite.com/jK2tEj5rEfo5TPCp/red-unmori-sword-eUiz5dWVo89bOcsT.png"><div>Unmori Sword</div></div>
+<div class="card"><img src="https://assets.zyrosite.com/jK2tEj5rEfo5TPCp/tampak-3per4-TK6uaXtTrJT1xBAG.png"><div>Amelia Penyihir</div></div>
+<div class="card"><img src="https://assets.zyrosite.com/jK2tEj5rEfo5TPCp/rovoo-aGpz1X2bMafmpVnw.jpeg"><div>Rovoo Robot Mungil</div></div>
+<div class="card"><img src="https://assets.zyrosite.com/jK2tEj5rEfo5TPCp/samping-d8I6TJTvWJONW4w1.png"><div>Cangkir Game</div></div>
+
+</div>
+</section>
+
+<section id="contact">
+<h2>Kontak</h2>
+<form>
+<input placeholder="Nama">
+<input placeholder="Email">
+<textarea rows="5" placeholder="Pesan"></textarea>
+<button>Kirim</button>
+</form>
+
+<div style="text-align:center;margin-top:20px">
+<a class="btn" href="https://wa.me/6281395280521">WhatsApp Saya</a>
+</div>
+</section>
+
+<footer>
+© 2026 Ihsan AtauL Musawir — 3D Modeller
+</footer>
 
 </body>
 </html>
